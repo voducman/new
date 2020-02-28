@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #drag-1, #drag-2, #drag-3 {
+  width: 25%;
+  min-height: 6.5em;
+  margin: 0;
+  background-color: #29e;
+  color: white;
+  border-radius: 0.75em;
+  padding: 0;
+  touch-action: none;
+  user-select: none;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
+    </style>
+<script src="https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.5/all/gauge.min.js"></script>
+<script src="./svg.min.js"></script>
+<script src="./svg.draw.min.js"></script>
+<!-- //<script src="./svg.select.min.js"></script> -->
+</head>
+<body style="min-width: 2000px; min-height: 1000px;">
+    <button onclick="drawRect();">      Draw Rect       </button>
+    <button onclick="drawCircle();">    Draw Circle     </button>
+    <button onclick="drawEllipse();">   Draw Ellipse    </button>
+    <button onclick="drawGaugeChart();">Draw Gauge Chart</button>
+    <button onclick="drawLineChart();"> Draw Line Chart </button>
+    
+    <!-- <div id="drag-1" class="resize-drag" style="position: absolute; z-index: 1; display: block">
+      <p> You can drag one element </p>
+    </div>
+    <div id="drag-2" class="resize-drag" style="position: absolute; z-index: 1; display: block">
+      <p> with each pointer </p>
+    </div>
+    <div id="drag-3" class="resize-drag" style="position: absolute; z-index: 1; display: block">
+      <p> with each pointer </p>
+    </div> -->
+
+    <!-- Injecting radial gauge -->
+<canvas data-type="radial-gauge" data-width="200" data-height="200" data-units="Km/h" data-title="false" data-value="0"
+  data-min-value="0" data-max-value="220" data-major-ticks="0,20,40,60,80,100,120,140,160,180,200,220"
+  data-minor-ticks="2" data-stroke-ticks="false" data-highlights='[
+    { "from": 0, "to": 50, "color": "rgba(0,255,0,.15)" },
+    { "from": 50, "to": 100, "color": "rgba(255,255,0,.15)" },
+    { "from": 100, "to": 150, "color": "rgba(255,30,0,.25)" },
+    { "from": 150, "to": 200, "color": "rgba(255,0,225,.25)" },
+    { "from": 200, "to": 220, "color": "rgba(0,0,255,.25)" }
+]' data-color-plate="#222" data-color-major-ticks="#f5f5f5" data-color-minor-ticks="#ddd" data-color-title="#fff"
+  data-color-units="#ccc" data-color-numbers="#eee" data-color-needle-start="rgba(240, 128, 128, 1)"
+  data-color-needle-end="rgba(255, 160, 122, .9)" data-value-box="true" data-animation-rule="bounce"
+  data-animation-duration="500" data-font-value="Led" data-animated-value="true" style="position: absolute; z-index: 1" class="resize-drag"></canvas>
+
+  <canvas data-type="linear-gauge"
+        data-width="120"
+        data-height="450"
+        data-border-radius="20"
+        data-borders="0"
+        data-bar-stroke-width="20"
+        data-minor-ticks="10"
+        data-major-ticks="0,10,20,30,40,50,60,70,80,90,100"
+        data-value="22.3"
+        data-units="°C"
+        data-color-value-box-shadow="false"
+        style="position: absolute; z-index: 1"
+        class="resize-drag"
+></canvas>
+
+    <div id="draw-area" style="background-color: #e4e4e4">
+
+    </div>
+    <!-- <svg height="800" width="2000" style="position: absolute; top: 0; left: 0; z-index: 0; background-color: burlywood">
+      <line class="resize-drag" class="resize-drag" x1="0" y1="0" x2="200" y2="200"
+        style="stroke:rgb(255,0,0); stroke-width: 50px; z-index: 1" />
+      <line class="resize-drag" x1="0" y1="0" x2="200" y2="300" style="stroke:rgb(255,0,0); stroke-width:10; z-index: 1" />
+      <polygon class="resize-drag" points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
+      Sorry, your browser does not support inline SVG.
+    </svg> -->
+
+<script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+<script src="./data.js"></script>
+<script src="./draggable-resize-config.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
